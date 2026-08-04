@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ProcessMiner: Odkryj, co warto zautomatyzować</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='t' x1='0' y1='0' x2='512' y2='512' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%236C63FF'/%3E%3Cstop offset='1' stop-color='%2300D4FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='115' fill='url(%23t)'/%3E%3Crect x='119' y='262' width='70' height='104' rx='22' fill='%23fff' opacity='.62'/%3E%3Crect x='221' y='208' width='70' height='158' rx='22' fill='%23fff' opacity='.82'/%3E%3Crect x='323' y='152' width='70' height='214' rx='22' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='t' x1='0' y1='0' x2='512' y2='512' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%236C63FF'/%3E%3Cstop offset='1' stop-color='%2300D4FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='115' fill='url(%23t)'/%3E%3Crect x='119' y='262' width='70' height='104' rx='22' fill='%23fff' opacity='.62'/%3E%3Crect x='221' y='208' width='70' height='158' rx='22' fill='%23fff' opacity='.82'/%3E%3Crect x='323' y='152' width='70' height='214' rx='22' fill='%23fff'/%3E%3C/svg%3E">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,8 +81,10 @@
       font-size: 1.25rem; font-weight: 800;
       letter-spacing: -0.04em; color: var(--ink);
       text-decoration: none;
+      display: inline-flex; align-items: center; gap: 9px;
     }
     .logo span { color: var(--blue); }
+    .logo-mark { width: 26px; height: 26px; border-radius: 7px; display: block; flex-shrink: 0; }
     .nav-links { display: flex; align-items: center; gap: 4px; }
     .nav-link {
       padding: 6px 14px; border-radius: 6px;
@@ -208,7 +212,9 @@
       font-size: 0.875rem; font-weight: 700;
       letter-spacing: -0.02em;
       margin-right: 20px;
+      display: inline-flex; align-items: center; gap: 7px;
     }
+    .app-nav-brand .logo-mark { width: 20px; height: 20px; border-radius: 5px; display: block; flex-shrink: 0; }
     .app-nav-brand span:first-child { color: #f1f5f9; }
     .app-nav-brand span.acc { color: #3b82f6; }
     .app-nav-brand .sep { color: #334155; margin: 0 4px; font-weight: 300; }
@@ -516,7 +522,8 @@
       max-width:1200px; margin:0 auto; padding:0 48px;
       display:flex; justify-content:space-between; align-items:center;
     }
-    .footer-logo { font-family:'Fraunces',serif; font-size:1.0625rem; font-weight:800; letter-spacing:-0.03em; color:white; }
+    .footer-logo { font-family:'Fraunces',serif; font-size:1.0625rem; font-weight:800; letter-spacing:-0.03em; color:white; display:inline-flex; align-items:center; gap:9px; }
+    .footer-logo .logo-mark { width:24px; height:24px; border-radius:6px; display:block; flex-shrink:0; }
     .footer-logo span { color:var(--blue); }
     .footer-r { display:flex; align-items:center; gap:28px; }
     .footer-email { color:var(--blue); text-decoration:none; font-family:'Fira Code',monospace; font-size:0.8125rem; }
@@ -562,7 +569,16 @@
 <!-- ─── NAVBAR ─── -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#" class="logo">Process<span>Miner</span></a>
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="pmLogo" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#6C63FF"/><stop offset="1" stop-color="#00D4FF"/></linearGradient></defs>
+        <rect width="512" height="512" rx="115" fill="url(#pmLogo)"/>
+        <rect x="119" y="262" width="70" height="104" rx="22" fill="#fff" opacity=".62"/>
+        <rect x="221" y="208" width="70" height="158" rx="22" fill="#fff" opacity=".82"/>
+        <rect x="323" y="152" width="70" height="214" rx="22" fill="#fff"/>
+      </svg>
+      Process<span>Miner</span></a>
     <nav class="nav-links">
       <a href="#how" class="nav-link"><span class="pl">Jak działa</span><span class="en">How it works</span></a>
       <a href="#features" class="nav-link"><span class="pl">Funkcje</span><span class="en">Features</span></a>
@@ -627,6 +643,14 @@
         <!-- Nav -->
         <div class="app-nav">
           <div class="app-nav-brand">
+            <svg class="logo-mark" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="pmApp" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#6C63FF"/><stop offset="1" stop-color="#00D4FF"/></linearGradient></defs>
+              <rect width="512" height="512" rx="115" fill="url(#pmApp)"/>
+              <rect x="119" y="262" width="70" height="104" rx="22" fill="#fff" opacity=".62"/>
+              <rect x="221" y="208" width="70" height="158" rx="22" fill="#fff" opacity=".82"/>
+              <rect x="323" y="152" width="70" height="214" rx="22" fill="#fff"/>
+            </svg>
             <span>Process</span><span class="acc">Miner</span>
             <span class="sep">/</span>
             <span class="sub">Amerpharma</span>
@@ -1134,7 +1158,16 @@
 <!-- ─── FOOTER ─── -->
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-logo">Process<span>Miner</span></div>
+    <div class="footer-logo">
+      <svg class="logo-mark" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="pmFoot" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#6C63FF"/><stop offset="1" stop-color="#00D4FF"/></linearGradient></defs>
+        <rect width="512" height="512" rx="115" fill="url(#pmFoot)"/>
+        <rect x="119" y="262" width="70" height="104" rx="22" fill="#fff" opacity=".62"/>
+        <rect x="221" y="208" width="70" height="158" rx="22" fill="#fff" opacity=".82"/>
+        <rect x="323" y="152" width="70" height="214" rx="22" fill="#fff"/>
+      </svg>
+      Process<span>Miner</span></div>
     <div class="footer-r">
       <a href="mailto:hello@processminer.io" class="footer-email">hello@processminer.io</a>
       <span class="footer-copy">© 2026 ProcessMiner</span>
