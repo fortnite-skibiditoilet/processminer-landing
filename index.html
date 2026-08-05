@@ -546,6 +546,13 @@
     /* ─── RESPONSIVE ─── */
     @media(max-width:900px){
       .hero { grid-template-columns:1fr; padding:60px 24px; gap:40px; }
+      /* allow the grid columns to shrink so the product mockup can't force the
+         whole page wider than the screen (was causing horizontal clipping) */
+      .hero > * { min-width:0; }
+      .app-mockup { width:100%; max-width:100%; }
+      /* the tab bar scrolls inside the mockup instead of forcing its min-width */
+      .app-nav { overflow-x:auto; scrollbar-width:none; }
+      .app-nav::-webkit-scrollbar { display:none; }
       .steps { grid-template-columns:1fr; }
       .steps::before { display:none; }
       .features { grid-template-columns:1fr; }
@@ -560,6 +567,11 @@
     @media(max-width:600px){
       .hero-h1 { font-size:2.25rem; }
       .hero { padding:50px 20px; }
+      /* keep the top bar clean on phones: logo + language only (the hero has its own CTA) */
+      .nav-right .btn { display:none; }
+      .nav-inner { padding:0 16px; }
+      .hero-sub { max-width:none; }
+      .hero-cta { gap:16px; }
     }
   </style>
 </head>
